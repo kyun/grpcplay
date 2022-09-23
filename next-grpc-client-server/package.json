@@ -3,12 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev && ( sleep 2 && cp -r ./proto .next/server/proto )",
+    "proto": "cp -r ./proto .next/server/proto",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
+    "@grpc/grpc-js": "^1.7.1",
+    "@grpc/proto-loader": "^0.7.3",
+    "@types/minimist": "^1.2.2",
+    "minimist": "^1.2.6",
     "next": "12.3.1",
     "react": "18.2.0",
     "react-dom": "18.2.0"
